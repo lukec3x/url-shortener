@@ -5,6 +5,6 @@ FactoryBot.define do
     visits { 1 }
     deleted { false }
     deleted_at { "2024-09-09 22:50:11" }
-    user { nil }
+    user
   end
 end

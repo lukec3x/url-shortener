@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_10_015011) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_10_121247) do
   create_table "urls", force: :cascade do |t|
     t.string "original_url"
     t.string "short_url"
-    t.integer "visits"
+    t.integer "visits", default: 0
     t.boolean "deleted", default: false
     t.datetime "deleted_at"
     t.integer "user_id", null: false

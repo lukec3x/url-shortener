@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, path: '', path_names: {
+  devise_for :users, path: '/users', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
     registration: 'signup'
@@ -17,4 +17,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  # root "users/url#redirect"
+  get '/:short_url', to: 'users/url#redirect'
+  
+  namespace :users do
+    
+    get '/top_visits', to: 'url#top_visits'
+
+    resources :url, only: [:index, :show, :create, :destroy]
+  end
 end
